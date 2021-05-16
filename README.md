@@ -11,10 +11,12 @@ my Name is Davi and i'm an enthusiast of doing easy things but in a hard way, an
 ## Instructions
 
 1. Install nextflow following the tutorial on [nextflow website](nextflow.io)
-2. Run it : 
+2. Clone and run it : 
 
 ```
-nextflow run https://github.com/Mxrcon/helloword-nextflow 
+git clone https://github.com/Mxrcon/helloword-nextflow.git
+cd helloword-nextflow
+nextflow run main.nf 
 
 ```
 ## Requirements:
