@@ -12,7 +12,7 @@ include{rust_hw} from "./modules/rust/rust.nf"
 
 workflow{
     // Execute the programs
-    python_hw()
+    python_hw(Channel.of(check_nextflow("python","python_hw")))
     ruby_hw()
     nextflow_hw()
     bash_hw(Channel.of(check_nextflow("bash","bash_hw")))
@@ -22,7 +22,6 @@ workflow{
     rust_hw()
 
     // show the messages from the programs
-    python_hw.out.view()
     ruby_hw.out.view()
     nextflow_hw.out.view()
     cpp_hw.out.view()

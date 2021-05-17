@@ -1,15 +1,19 @@
 nextflow.enable.dsl=2
-def say_hello_python(){
-
-    text = """python ${workDir}/../modules/python/python_hw.py""".execute().text
-    return text
-}
-
 
 process python_hw{
-    output: val(message)
+	tag "python"
+    input: 
+		val(check)
+
+    output: 
+    	val(message)
+
     script:
-    message = say_hello_python().strip("\n")
+    message = ""
+    if(check == true){
+    message = """python ${workDir}/../modules/python/python_hw.py""".execute().text.strip("\n")
+    log.info "${message}"
+	}
     """
     """
 }

@@ -9,6 +9,7 @@ process julia_hw{
     	val(message)
 
     script:
+    message = ""
     if(check == true){
     message = """julia ${workDir}/../modules/julia/julia_hw.jl""".execute().text.strip("\n")
     log.info "${message}"
