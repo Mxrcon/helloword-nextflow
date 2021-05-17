@@ -29,4 +29,5 @@ while i don't have time to deploy a docker container with the compilers, you'll 
 * Nextflow
 * Python 3
 * Ruby
+* Bash
 
