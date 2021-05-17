@@ -10,7 +10,7 @@ my Name is Davi and i'm an enthusiast of doing easy things but in a hard way, an
 
 ## Instructions
 
-1. Install nextflow following the tutorial on [nextflow website](nextflow.io)
+1. Install nextflow following the tutorial on [nextflow website](https://nextflow.io/)
 2. Clone and run it : 
 
 ```
