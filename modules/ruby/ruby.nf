@@ -9,7 +9,7 @@ def say_hello_ruby(){
 process ruby_hw{
     output: val(message)
     script:
-    message = say_hello_ruby()
+    message = say_hello_ruby().strip("\n")
     """
     """
 }
