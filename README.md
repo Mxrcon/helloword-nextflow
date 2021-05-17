@@ -23,11 +23,16 @@ nextflow run main.nf
 
 while i don't have time to deploy a docker container with the compilers, you'll have to manually install the compilers to all languages featured in this script
 
+Required compilers/interpreters: gcc, g++, rustc, python3, ruby and julia
 
-## Languages featured:
+## Hello word using:
 
 * Nextflow
 * Python 3
 * Ruby
 * Bash
+* Julia
+* Rust
+* C
+* C++
 
