@@ -1,6 +1,3 @@
 #include <stdio.h>
-
-void main() {
-	printf("hello word from c!");
-}
+void main() {printf("hello word from c!");}
 

@@ -8,6 +8,7 @@ include{bash_hw} from "./modules/bash/bash.nf"
 include{julia_hw} from "./modules/julia/julia.nf"
 include{c_hw} from "./modules/c/c.nf"
 include{cpp_hw} from "./modules/cpp/cpp.nf"
+include{rust_hw} from "./modules/rust/rust.nf"
 
 workflow{
     // Execute the programs
@@ -18,6 +19,7 @@ workflow{
     julia_hw()
     c_hw()
     cpp_hw()
+    rust_hw()
 
     // show the messages from the programs
     python_hw.out.view()
@@ -27,4 +29,5 @@ workflow{
     julia_hw.out.view()
     c_hw.out.view()
     cpp_hw.out.view()
+    rust_hw.out.view()
 }
