@@ -15,7 +15,7 @@ workflow{
     python_hw()
     ruby_hw()
     nextflow_hw()
-    bash_hw()
+    bash_hw(Channel.of(check_nextflow("bash","bash_hw")))
     julia_hw()
     c_hw()
     cpp_hw()
@@ -25,9 +25,17 @@ workflow{
     python_hw.out.view()
     ruby_hw.out.view()
     nextflow_hw.out.view()
-    bash_hw.out.view()
+
     julia_hw.out.view()
     c_hw.out.view()
     cpp_hw.out.view()
     rust_hw.out.view()
+
+}
+
+def check_nextflow(bin,task_name){
+    if("""which ${bin}""".execute().text == ""){
+    log.warn "${bin} not found, skipping ${task_name}"
+    return false
+    }else{return true}
 }

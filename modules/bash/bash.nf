@@ -1,17 +1,22 @@
 nextflow.enable.dsl=2
-def say_hello_bash(){
-
-    text = """bash ${workDir}/../modules/bash/bash_hw.sh""".execute().text
-    return text
-}
-
 
 process bash_hw{
-    output: val(message)
+	tag "bash"
+	input: 
+		val(check)
+
+    output: 
+    	val(message)
+
     script:
-    message = say_hello_bash().strip("\n")
-    """
-    """
+    message = ""
+    if(check == true){
+    message = """bash ${workDir}/../modules/bash/bash_hw.sh""".execute().text.strip("\n")
+	log.info "${message}"
+	}
+
+	"""
+	"""
 }
 
 
