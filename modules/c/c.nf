@@ -3,17 +3,23 @@ def compile_hello_c(){
     """gcc ${workDir}/../modules/c/c_hw.c -o modules/c/c_hw""".execute()
 }
 
-def say_hello_c(){
-    text = """${workDir}/../modules/c/c_hw""".execute().text
-    return text
-}
-
-
 process c_hw{
-    output: val(message)
+    tag "gcc"
+	input: 
+		val(check)
+
+    output: 
+    	val(message)
+
     script:
+
+    message = ""
+    if(check == true){	
     compile_hello_c()
-    message = say_hello_c().strip("\n")
+    message = """${workDir}/../modules/c/c_hw""".execute().text.strip("\n")
+    log.info "${message}"
+	}
+
     """
     """
 }

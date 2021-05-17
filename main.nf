@@ -16,8 +16,8 @@ workflow{
     ruby_hw()
     nextflow_hw()
     bash_hw(Channel.of(check_nextflow("bash","bash_hw")))
-    julia_hw()
-    c_hw()
+    julia_hw(Channel.of(check_nextflow("julia","julia_hw")))
+    c_hw(Channel.of(check_nextflow("gcc","c_hw")))
     cpp_hw()
     rust_hw()
 
@@ -25,9 +25,6 @@ workflow{
     python_hw.out.view()
     ruby_hw.out.view()
     nextflow_hw.out.view()
-
-    julia_hw.out.view()
-    c_hw.out.view()
     cpp_hw.out.view()
     rust_hw.out.view()
 
