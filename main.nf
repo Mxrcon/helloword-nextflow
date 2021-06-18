@@ -12,7 +12,7 @@ include{rust_hw} from "./modules/rust/rust.nf"
 
 workflow{
     // Execute the programs
-    python_hw(Channel.of(check_nextflow("python","python_hw")))
+    python_hw()
     ruby_hw()
     nextflow_hw()
     bash_hw(Channel.of(check_nextflow("bash","bash_hw")))
